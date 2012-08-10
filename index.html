@@ -7,8 +7,29 @@
     <meta name="description" content="xyz.js : XYZ Image Loader in JavaScript" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/prettify.css">
 
     <title>xyz.js</title>
+    <script src="./javascripts/prettify.js"></script>
+    <script src="https://raw.github.com/imaya/xyz.js/master/bin/xyz.min.js"></script>
+    <script src="./javascripts/main.js?hogehoge"></script>
+    <style>
+      #dropbox {
+        transition: opacity .1s linear;
+        -webkit-transition: opacity .1s linear;
+        -moz-transition:    opacity .1s linear;
+        -o-transition:      opacity .1s linear;
+        min-height: 100px;
+      }
+      #dropbox.dragenter {
+        opacity: 0.7;
+        background-color: black;
+        transition: background-color .1s linear;
+        -webkit-transition: background-color .1s linear;
+        -moz-transition:    background-color .1s linear;
+        -o-transition:      background-color .1s linear;
+      }
+    </style>
   </head>
 
   <body>
@@ -38,7 +59,7 @@ xyz.min.js を読み込んだ後、CanvasTool.XyzLoad という function を呼�
 
 <p>たとえば、XMLHttpRequest で受信した XYZ 画像データを canvas に描画するのは以下のようにします。</p>
 
-<pre><code>var xhr = new XMLHttpRequest();
+<pre><code class="prettyprint">var xhr = new XMLHttpRequest();
 var url = "sample.xyz";
 
 xhr.responseType = "arraybuffer";
@@ -57,7 +78,15 @@ xhr.open('GET', url, true);
 xhr.send();
 </code></pre>
       </section>
+
+      <section id="main_content" class="inner">
+        <h1>Demo</h1>
+<div class="deco" id="dropbox">ここに XYZ 画像形式のファイルをドラッグアンドドロップすると,
+ここに表示する事ができます。</div>
+      </section>
+
     </div>
+
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
